@@ -94,5 +94,11 @@
 ### Section 5. 회원 관리 예제 - 웹 MVC 개발
 ------------
 #####   (1) 회원 웹 기능 - 홈 화면 추가
+요청이 오면 관련 컨트롤러를 먼저 찾고 없으면 정적 파일을 찾기에 컨트롤러가 정적 파일보다 우선순위가 높다.
 #####   (2) 회원 웹 기능 - 등록
+/members/new는 GET방식으로 들어가 members/createMemberForm으로 이동하여 createMemberForm.html이 실행되는데 이 파일은 POST방식이다. 
+등록을 누르면 url은 GET방식을 사용했을 때와 같지만 POST 방식이기에 create 메소드가 호출된다. 
+create 메소드가 실행되면 MemberForm을 통해 setName을 호출해 getName으로 member의 name을 꺼낸다.
 #####   (3) 회원 웹 기능 - 조회
+루프를 돌면서 객체를 꺼내 member에 담고, getId()와 getName()을 통해 값을 가져와 id와 name을 출력한다.
+서버를 다시 시작하면 데이터가 사라짐 --> 파일이나 데이터베이스 저장 필요!!
