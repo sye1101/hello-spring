@@ -120,4 +120,17 @@ create 메소드가 실행되면 MemberForm을 통해 setName을 호출해 getNa
 - 스프링 JdbcTemplate과 MyBatis 같은 라이브러리는 JDBC API에서 본 반복 코드를 대부분 제거해준다. 하지만 SQL은 직접 작성해야 한다.
 - 생성자가 딱 하나만 있으면 스프링빈으로 등록될 때, @Autowired 생략 가능
 #####   (5) JPA
+- JPA는 기존의 반복 코드는 물론이고, 기본적인 SQL도 JPA가 직접 만들어서 실행해준다.
+- JPA를 사용하면, SQL과 데이터 중심의 설계에서 객체 중심의 설계로 패러다임을 전환을 할 수 있다.
+- JPA를 사용하면 개발 생산성을 크게 높일 수 있다.
+- spring-boot-starter-data-jpa 는 내부에 jdbc 관련 라이브러리를 포함한다. 따라서 jdbc는 제거해도
+  된다. (build.gradle 파일)
+- JPA를 통한 모든 데이터 변경은 트랜잭션 안에서 실행해야 한다.
 #####   (6) 스프링 데이터 JPA
+- 스프링 데이터 JPA는 JPA를 편리하게 사용하도록 도와주는 기술이다.
+- 스프링 데이터 JPA가 SpringDataJpaMemberRepository 를 스프링 빈으로 자동 등록해준다.
+- 인터페이스를 통한 기본적인 CRUD (findByName() , findByEmail() 처럼 메서드 이름 만으로 조회 기능 제공, 페이징 기능 자동 제공)
+### Section 7. AOP
+------------
+#####   (1) AOP가 필요한 상황
+#####   (2) AOP 적용
